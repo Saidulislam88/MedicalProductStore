@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace MPS.Database
 {
-    public class MPSContext : DbContext
+    public class MPSContext : DbContext,IDisposable
     {
         public MPSContext() : base("MPSConnection")
         {
-
+           
         }
 
         public DbSet<Category> Categories { get; set; }

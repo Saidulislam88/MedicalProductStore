@@ -237,6 +237,9 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -258,6 +261,10 @@
     <ProjectReference Include="..\MPS.Entities\MPS.Entities.csproj">
       <Project>{13D048A6-AB39-4628-B451-B8B76520E95C}</Project>
       <Name>MPS.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPS.Services\MPS.Services.csproj">
+      <Project>{B8799E72-EF29-4AD8-A53B-14D537AF5EF0}</Project>
+      <Name>MPS.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
