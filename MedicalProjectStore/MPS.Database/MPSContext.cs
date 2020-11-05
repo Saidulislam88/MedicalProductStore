@@ -12,7 +12,7 @@ namespace MPS.Database
     {
         public MPSContext() : base("MPSConnection")
         {
-           
+
         }
 
         public DbSet<Category> Categories { get; set; }
