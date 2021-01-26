@@ -55,6 +55,14 @@
     <Compile Include="Migrations\202008241439552_initialized.designer.cs">
       <DependentUpon>202008241439552_initialized.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011071741334_ImageUrlAdded.cs" />
+    <Compile Include="Migrations\202011071741334_ImageUrlAdded.designer.cs">
+      <DependentUpon>202011071741334_ImageUrlAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101191038255_ConfigurationTableAdder.cs" />
+    <Compile Include="Migrations\202101191038255_ConfigurationTableAdder.designer.cs">
+      <DependentUpon>202101191038255_ConfigurationTableAdder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MPSContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,6 +80,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008241439552_initialized.resx">
       <DependentUpon>202008241439552_initialized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011071741334_ImageUrlAdded.resx">
+      <DependentUpon>202011071741334_ImageUrlAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101191038255_ConfigurationTableAdder.resx">
+      <DependentUpon>202101191038255_ConfigurationTableAdder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

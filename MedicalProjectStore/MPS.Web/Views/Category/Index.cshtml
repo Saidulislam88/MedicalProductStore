@@ -1,12 +1,40 @@
 ﻿@model List<MPS.Entities.Category>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Categories";
 }
 
-<h2>Index</h2>
 
-@foreach (var categories in Model)
-{
-    <h1>@categories.Name</h1>
-}
 
+
+    <section class="flat-row flat-iconbox">
+        <div class="cv-breadcrumb">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cv-breadcrumb-box">
+                            <h1>Categories</h1>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+        <div class="container">
+            <div id="tableContiner">
+                @{
+                    Html.RenderAction("CategoryTable");
+                }
+            </div>
+
+            <hr />
+            <div id="actionContainer">
+
+            </div>
+        </div>
+
+        
+    </section>

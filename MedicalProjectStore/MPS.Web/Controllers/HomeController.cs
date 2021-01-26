@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MPS.Web.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +11,7 @@ namespace MPS.Web.Controllers
     {
         public ActionResult Index()
         {
+            HomeViewModel model = new HomeViewModel();
             return View();
         }
 

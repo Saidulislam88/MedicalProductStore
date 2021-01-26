@@ -1,4 +1,4 @@
-﻿
+﻿@model NewProductViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -8,43 +8,49 @@
 
 <form id="createProduct">
 
-    <label>Name</label>
-    <input name="Name" />
+    <div class="form-group">
+        <label>Category</label>
+        <select class="form-control" name="CategoryID">
+            @foreach (var category in Model.AvailableCategories)
+            {
+                <option value="@category.ID">@category.Name</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" name="Name" />
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input class="form-control" name="Description" />
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input class="form-control" name="Price" />
+    </div>
+    <button id="saveBtn" type="button" class="btn btn-primary">Save</button>
 
-    <br />
-
-    <label>Description</label>
-    <input name="Description" />
-
-    <br />
-
-    <label>Price</label>
-    <input name="Price" />
-
-    <br />
-
-    <button id="saveBtn" type="button">Save</button>
 
 </form>
 
 <script>
 
-    $("#saveBtn").click(function ()
-    {
-         
+    $("#saveBtn").click(function () {
+
         $.ajax({
             type: 'post',
-			url: '/Product/Create',
+            url: '/Product/Create',
             data: $("#createProduct").serialize()
-			 
-		})
-        .done(function (response) {
-            $("#tableContiner").html(response);
-            $("#actionContiner").html("");
+
         })
-        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
-        	alert("FAIL");
-        });
+            .done(function (response) {
+                $("#tableContiner").html(response);
+                $("#actionContainer").html("");
+            })
+            .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+                alert("FAIL");
+            });
     })
 
 </script>

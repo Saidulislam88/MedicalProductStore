@@ -269,6 +269,7 @@ input::-webkit-inner-spin-button {
     border-radius: 3px;
     font-size: 14px;
 }
+
 .cv-price-cart:hover{
     color:#fff;
 }
@@ -3137,6 +3138,11 @@ textarea{
     }
     .cv-account-info {
         margin: 26px 0 30px;
+    }
+
+    .wrap-td {
+        width: 1px;
+        white-space: nowrap;
     } 
 }
 /* responsive end */

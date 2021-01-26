@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace MPS.Services
 {
@@ -14,16 +15,23 @@ namespace MPS.Services
         {
             using (var context = new MPSContext())
             {
-                return context.Products.Find(ID);
+                return context.Products.Where(x => x.ID == ID).Include(x => x.Category).FirstOrDefault();
             }
 
         }
 
+        public List<Product> GetProducts(List<int> IDs)
+        {
+            using (var context = new MPSContext())
+            {
+                return context.Products.Where(product => IDs.Contains(product.ID)).ToList();
+            }
+        }
         public List<Product> GetProducts()
         {
             using (var context = new MPSContext())
             {
-                return context.Products.ToList();
+                return context.Products.Include(x=>x.Category).ToList();
             }
 
         }
@@ -32,6 +40,7 @@ namespace MPS.Services
         {
             using (var context =new MPSContext() )
             {
+                context.Entry(product.Category).State = System.Data.Entity.EntityState.Unchanged;
                 context.Products.Add(product);
                 context.SaveChanges();
             }

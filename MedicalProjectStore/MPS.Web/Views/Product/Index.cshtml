@@ -1,20 +1,41 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Products";
 }
+ 
 
-<div id="tableContiner">
+<section class="flat-row flat-iconbox">
+    <div class="cv-breadcrumb">
+        <div class="container">
 
-    @{
-        Html.RenderAction("ProductTable");
+            <div class="row">
+                <div class="col-12">
+                    <div class="cv-breadcrumb-box">
+                        <h1>Products</h1>
 
-        //Html.RenderAction("Create");
-    }
-</div>
+                    </div>
+                </div>
+            </div>
 
-<div id="actionContiner">
+        </div>
 
-  
-</div>
+    </div>
+
+    <div class="container">
+        <div id="tableContiner">
+            @{
+                Html.RenderAction("ProductTable");
+            }
+        </div>
+
+        <hr />
+        <div id="actionContainer">
+
+        </div>
+    </div>
+
+
+</section>
+
 
 

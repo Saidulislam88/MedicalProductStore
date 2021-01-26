@@ -8,7 +8,7 @@ namespace MPS.Entities
 {
     public class Product : BaseEntities
     {
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
         public decimal Price { get; set; }
     }
 }
